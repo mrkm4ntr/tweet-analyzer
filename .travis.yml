@@ -1,0 +1,11 @@
+language: python
+python:
+- 3.5
+services: mongodb
+before_install:
+  - openssl aes-256-cbc -K $encrypted_799c97f7b515_key -iv $encrypted_799c97f7b515_iv
+  - in config.py.enc -out analyzer/config.py -d
+install: pip install -r requirements.txt
+script:
+  - python analyzer/command.py a
+  - python analyzer/command.py e

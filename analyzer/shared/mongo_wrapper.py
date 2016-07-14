@@ -10,5 +10,5 @@ class MongoWrapper(object):
 
     @staticmethod
     def connect_tweets():
-        client = pymongo.MongoClient(config.HOST, config.PORT)
+        client = pymongo.MongoClient(config.URI)
         return client[config.DB_NAME][config.COLLECTION_NAME]
